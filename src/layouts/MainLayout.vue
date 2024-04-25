@@ -87,7 +87,6 @@
           </div>
         </q-img>
       </q-drawer>
-
     <q-page-container>
 
       <router-view v-slot="{ Component }">

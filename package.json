@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
+    "animate.css": "^4.1.1",
     "core-js": "^3.31.1",
     "quasar": "^2.8.0",
     "vue": "^3.4.18",
