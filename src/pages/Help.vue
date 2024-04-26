@@ -5,5 +5,7 @@
 </template>
 
 <script setup>
-
+defineOptions({
+  name: "Help",
+});
 </script>
