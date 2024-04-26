@@ -48,13 +48,13 @@ const $q = useQuasar();
 const newNote = ref([""]);
 
 const tasks = ref([
-   
+
 ]);
 
 // функция удаляет элемент списка
 
 function deleteTask(index) {
-        $q.dialog({
+    $q.dialog({
         title: 'Confirm',
         message: 'are you sure you want to delete the note?',
         cancel: true,
@@ -65,7 +65,16 @@ function deleteTask(index) {
     })
 };
 
+// функция добавляет элемент в список с проверкой на пустую строку
+
 function newTask() {
+    if (newNote.value.trim() === '') {
+        $q.dialog({
+            title: 'Oops',
+            message: "You didn't enter anything!"
+        });
+        return;
+    };
     tasks.value.push({
         title: newNote.value,
         done: false
