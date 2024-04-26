@@ -62,28 +62,25 @@ const tasks = ref([
 // функция удаляет элемент списка
 
 function deleteTask(index) {
-    this.$q.dialog({
+        $q.dialog({
         title: 'Confirm',
         message: 'are you sure you want to delete the note?',
         cancel: true,
         persistent: true
     }).onOk(() => {
-        this.tasks.splice(index, 1);
-        this.$q.notify('note deleted')
+        tasks.value.splice(index, 1);
+        $q.notify('note deleted')
     })
 };
-
-
 
 function newTask() {
-    console.log(newNote.value);
-
-    this.tasks.push({
-        title: this.newNote,
+    tasks.value.push({
+        title: newNote.value,
         done: false
-    })
-
+    });
+    newNote.value = '';
 };
+
 
 
 
