@@ -25,6 +25,12 @@
                 </q-item-section>
             </q-item>
         </q-list>
+        <div v-if="!tasks.length" class="no-task absolute-center">
+            <q-icon name="warning" size="200px" color="teal-4"></q-icon>
+            <div class="text-h4 text-center text-teal-4">
+                Empty! &#128542;
+            </div>
+        </div>
     </q-page>
 </template>
 
@@ -42,21 +48,7 @@ const $q = useQuasar();
 const newNote = ref([""]);
 
 const tasks = ref([
-    {
-        id: 1,
-        title: "list 1",
-        done: false
-    },
-    {
-        id: 2,
-        title: "list 2",
-        done: false
-    },
-    {
-        id: 3,
-        title: "list 3",
-        done: false
-    }
+   
 ]);
 
 // функция удаляет элемент списка
